@@ -30,8 +30,13 @@ export function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ 
+                  scale: 1.01,
+                  transition: { duration: 0.2 }
+                }}
+                className="group"
               >
-                <Card>
+                <Card className="transition-all duration-200 group-hover:shadow-lg border-l-4 border-l-primary/20 group-hover:border-l-primary">
                   <CardHeader>
                     <div className="flex justify-between items-start">
                       <div>

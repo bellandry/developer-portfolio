@@ -44,11 +44,6 @@ export function Hero() {
                 <Linkedin className="h-4 w-4" />
               </a>
             </Button>
-            <Button variant="outline" asChild>
-              <a href="mailto:contact@laclass.dev">
-                <Mail className="h-4 w-4" />
-              </a>
-            </Button>
           </div>
         </motion.div>
       </div>

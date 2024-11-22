@@ -33,10 +33,14 @@ export function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                whileHover={{ y: 2}}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
+                whileHover={{ 
+                  scale: 1.02,
+                  transition: { duration: 0.2 }
+                }}
+                className="group"
               >
-                <Card className="h-full flex flex-col">
+                <Card className="h-full flex flex-col transition-shadow duration-200 group-hover:shadow-lg">
                   <div className="relative aspect-video">
                     <Image
                       src={project.image}
