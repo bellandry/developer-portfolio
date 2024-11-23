@@ -42,7 +42,7 @@ export const skills = {
     {
       name: 'Express',
       icon: 'express',
-      description: 'Creating robust REST APIs and web applications.'
+      description: 'Fast, minimalist framework for building scalable web apps and RESTful APIs'
     },
     {
       name: 'PostgreSQL',
