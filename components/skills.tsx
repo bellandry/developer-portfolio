@@ -112,13 +112,13 @@ export function Skills() {
                             background: useMotionTemplate`
                               radial-gradient(
                                 500px circle at ${mouseX}px ${mouseY}px,
-                                rgba(var(--primary-rgb), 0.1),
+                                rgba(var(--primary-rgb), 0.15),
                                 transparent 80%
                               )
                             `,
                           }}
                         />
-                        <Card className="relative overflow-hidden transition-all duration-200 group-hover:shadow-lg border-primary/20">
+                        <Card className="relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1">
                           <CardContent className="p-6">
                             <div className="flex items-center gap-4">
                               <div className="p-2 rounded-lg bg-primary/10">

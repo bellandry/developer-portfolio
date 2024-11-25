@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { translations } from '@/constants';
-import { useLanguage } from '@/context/language-context';
+} from "@/components/ui/card";
+import { translations } from "@/constants";
+import { useLanguage } from "@/context/language-context";
+import { motion } from "framer-motion";
 
 export function Experience() {
   const { language } = useLanguage();
@@ -23,7 +23,9 @@ export function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold mb-12 text-center">Work Experience</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">
+            Work Experience
+          </h2>
           <div className="space-y-6">
             {translations[language].experience.map((job, index) => (
               <motion.div
@@ -32,9 +34,9 @@ export function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.01,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
                 className="group"
               >
@@ -43,14 +45,21 @@ export function Experience() {
                     <div className="flex justify-between items-start">
                       <div>
                         <CardTitle>{job.title}</CardTitle>
-                        <CardDescription>{job.company}</CardDescription>
+                        <CardDescription className="mt-1">
+                          {job.company}
+                        </CardDescription>
                       </div>
-                      <span className="text-sm text-muted-foreground">{job.period}</span>
+                      <span className="text-sm text-muted-foreground">
+                        {job.period}
+                      </span>
                     </div>
                   </CardHeader>
                   <CardContent>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      {job.description}
+                    </p>
                     <ul className="list-disc list-inside space-y-2">
-                      {job.description.map((item, i) => (
+                      {job.achievements.map((item, i) => (
                         <li key={i} className="text-sm text-muted-foreground">
                           {item}
                         </li>
