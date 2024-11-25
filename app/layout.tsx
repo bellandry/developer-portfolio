@@ -11,8 +11,8 @@ const inter = Inter({ subsets: ['latin'] });
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://laclass.dev';
 
 export const metadata: Metadata = {
-  title: 'Landry Bella | Senior React Developer',
-  description: 'Senior React/Next.js developer with 5+ years of experience building modern web applications. Expertise in TypeScript, React, Next.js, and full-stack development.',
+  title: 'Landry Bella | Full-Stack Next.js Developer',
+  description: 'Full-Stack Senior React/Next.js developer with 5+ years of experience building modern web applications. Expertise in TypeScript, React, Next.js, and full-stack development.',
   keywords: [
     // Core Roles
     'React Developer', 'Next.js Developer', 'TypeScript Expert', 'Full Stack Developer', 
@@ -38,20 +38,20 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: baseUrl,
-    title: 'Landry Bella | Senior React Developer',
-    description: 'Senior React/Next.js developer with 5+ years of experience building modern web applications.',
+    title: 'Landry Bella | Full-Stack Next.js Developer',
+    description: 'Full-Stack Senior React/Next.js developer with 5+ years of experience building modern web applications.',
     siteName: 'Landry Bella Portfolio',
     images: [{
       url: '/og-image.jpg',
       width: 1200,
       height: 630,
-      alt: 'Landry Bella - Senior React Developer'
+      alt: 'Landry Bella - Full-Stack Next.js Developer'
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Landry Bella | Senior React Developer',
-    description: 'Senior React/Next.js developer with 5+ years of experience building modern web applications.',
+    title: 'Landry Bella | Full-Stack Next.js Developer',
+    description: 'Full-Stack Senior React/Next.js developer with 5+ years of experience building modern web applications.',
     images: ['/og-image.png'],
   },
   robots: {
