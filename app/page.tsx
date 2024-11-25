@@ -9,7 +9,17 @@ import { getProjects } from '@/lib/graphql';
 export const revalidate = 3600; // Revalidate every hour
 
 export default async function Home() {
-  const projects = await getProjects();
+  let projects;
+  try {
+    projects = await getProjects();
+    
+    if (!projects) {
+      projects = { projects: [] };
+    }
+  } catch (error) {
+    console.error('Error fetching projects:', error);
+    projects = { projects: [] };
+  }
 
   return (
     <>

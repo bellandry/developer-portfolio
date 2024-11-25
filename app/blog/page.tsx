@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { format } from 'date-fns';
 import { getBlogPosts } from '@/lib/graphql';
 import { Metadata } from 'next';
+import { BlogEmptyState } from '@/components/blog-empty-state';
 
 export const metadata: Metadata = {
   title: 'Blog | Landry Bella',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogPage() {
-  const { posts } = await getBlogPosts();
+  let posts;
+  try {
+    const response = await getBlogPosts();
+    posts = response.posts;
+
+    if (!posts || posts.length === 0) {
+      return <BlogEmptyState type="no-posts" />;
+    }
+  } catch (error) {
+    return <BlogEmptyState type="error" />;
+  }
 
   // Generate JSON-LD structured data for blog listing
   const jsonLd = {

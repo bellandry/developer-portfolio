@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { Project } from '@/types/project';
 import { ProjectModal } from './project-modal';
+import { ProjectsEmptyState } from './projects-empty-state';
 import { useState } from 'react';
 
 interface ProjectsProps {
@@ -24,6 +25,14 @@ interface ProjectsProps {
 export function Projects({ initialProjects }: ProjectsProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  if (!initialProjects || !initialProjects.projects) {
+    return <ProjectsEmptyState type="error" />;
+  }
+
+  if (initialProjects.projects.length === 0) {
+    return <ProjectsEmptyState type="no-projects" />;
+  }
 
   return (
     <section id="projects" className="py-20 px-4 bg-secondary/20">

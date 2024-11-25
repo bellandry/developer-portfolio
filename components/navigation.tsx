@@ -20,13 +20,25 @@ export function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
 
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Check initial scroll position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const isActiveLink = (href: string) => {
     if (href === '/') {
       return pathname === '/';
     }
     if (href.startsWith('/#')) {
       // Check if we're on the home page and the hash matches
-      if (pathname === '/') {
+      if (pathname === '/' && typeof window !== 'undefined') {
         const hash = window.location.hash;
         return hash === href;
       }

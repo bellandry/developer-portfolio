@@ -20,6 +20,12 @@ import {
   SiJest,
   SiGithubactions,
   SiVisualstudiocode,
+  SiDatadotai,
+  SiLaravel,
+  SiVuedotjs,
+  SiVercel,
+  SiGooglegemini,
+  SiHttpie,
 } from 'react-icons/si';
 
 const iconMap = {
@@ -38,6 +44,12 @@ const iconMap = {
   jest: SiJest,
   github: SiGithubactions,
   vscode: SiVisualstudiocode,
+  zod: SiHttpie,
+  ai: SiGooglegemini,
+  database: SiDatadotai,
+  laravel: SiLaravel,
+  vue: SiVuedotjs,
+  vercel: SiVercel
 };
 
 export function Skills() {

@@ -20,6 +20,11 @@ export const skills = {
       description: 'Creating performant, SEO-friendly applications with server-side rendering and static generation.'
     },
     {
+      name: 'Vue.js',
+      icon: 'vue',
+      description: 'Creating interactive web applications with progressive JavaScript framework.'
+    },
+    {
       name: 'TypeScript',
       icon: 'typescript',
       description: 'Writing type-safe code to reduce bugs and improve development experience.'
@@ -30,7 +35,7 @@ export const skills = {
       description: 'Crafting responsive and beautiful UIs with utility-first CSS framework.'
     },
     {
-      name: 'Redux Toolkit',
+      name: 'State Management',
       icon: 'redux',
       description: 'Managing complex application state with modern Redux patterns.'
     }
@@ -42,29 +47,34 @@ export const skills = {
       description: 'Building scalable server-side applications with JavaScript runtime.'
     },
     {
-      name: 'Express',
-      icon: 'express',
-      description: 'Fast, minimalist framework for building scalable web apps and RESTful APIs'
+      name: 'Laravel',
+      icon: 'laravel',
+      description: 'Developing robust PHP applications with elegant syntax and features.'
     },
     {
-      name: 'PostgreSQL',
+      name: 'Database & ORMs',
       icon: 'postgresql',
-      description: 'Designing and managing relational databases for data persistence.'
+      description: 'Working with MySQL, PostgreSQL, MongoDB, Prisma, and Drizzle ORM.'
     },
     {
-      name: 'MongoDB',
-      icon: 'mongodb',
-      description: 'Working with NoSQL databases for flexible data storage.'
-    },
-    {
-      name: 'GraphQL',
+      name: 'Express & GraphQL',
       icon: 'graphql',
-      description: 'Implementing efficient data querying and manipulation.'
-    }
+      description: 'Creating efficient APIs with Express.js and GraphQL for flexible data querying.'
+    },
+    {
+      name: 'AI Integration',
+      icon: 'ai',
+      description: 'Implementing Generative AI solutions with OpenAI and Google Gemini.'
+    },
+    {
+      name: 'API Validation',
+      icon: 'zod',
+      description: 'Ensuring type-safe APIs and data validation with Zod.'
+    },
   ],
   tools: [
     {
-      name: 'Git',
+      name: 'Git, Github & Gitlab',
       icon: 'git',
       description: 'Version control and collaborative development workflows.'
     },
@@ -74,7 +84,7 @@ export const skills = {
       description: 'Containerizing applications for consistent deployment.'
     },
     {
-      name: 'Jest',
+      name: 'Testing',
       icon: 'jest',
       description: 'Writing and maintaining comprehensive test suites.'
     },
@@ -82,6 +92,11 @@ export const skills = {
       name: 'GitHub Actions',
       icon: 'github',
       description: 'Automating CI/CD pipelines for seamless deployment.'
+    },
+    {
+      name: 'Vercel',
+      icon: 'vercel',
+      description: 'Primary development environment with extensive customization.'
     },
     {
       name: 'VS Code',
@@ -120,34 +135,35 @@ export const projects = [
 
 export const experience = [
   {
-    title: 'Senior React Developer',
-    company: 'Tech Solutions Inc.',
-    period: '2021 - Present',
-    description: 'Led development of enterprise-scale React applications, mentored junior developers, and implemented best practices.',
+    title: 'Senior Web Developer',
+    company: 'Solution Quickdo Canada',
+    period: '2023 - 2024',
+    description: 'Develope and maintain web applications using modern technologies and best practices',
     achievements: [
+      'Implemented automated testing increasing code coverage to 85%',
       'Reduced application bundle size by 40% through code splitting and lazy loading',
       'Implemented CI/CD pipeline reducing deployment time by 60%',
-      'Led team of 5 developers in successful delivery of major features',
     ],
   },
   {
-    title: 'Frontend Developer',
-    company: 'Digital Innovations Ltd.',
-    period: '2019 - 2021',
-    description: 'Developed and maintained multiple React-based web applications with focus on performance and user experience.',
+    title: 'Tech Lead - Full-Stack developer',
+    company: 'CINAF TV S.A',
+    period: '2021 - 2023',
+    description: 'Improve user experience, mentored junior developers, and implemented best practices.',
     achievements: [
-      'Improved application performance by 50% through optimization techniques',
-      'Implemented automated testing increasing code coverage to 85%',
+      'Whitch to Symfony for back-end and to Vue.js & React for front-ends',
+      'Led team of 8 developers in successful delivery of major features',
       'Developed reusable component library used across multiple projects',
+      'Improved application performance by 50% through optimization techniques',
     ],
   },
   {
     title: 'Junior Web Developer',
-    company: 'StartUp Co.',
-    period: '2018 - 2019',
-    description: 'Started career working on various web development projects using React and related technologies.',
+    company: 'CINAF TV S.A',
+    period: '2019 - 2021',
+    description: 'Started career working on VOD platform projects using PHP and related technologies.',
     achievements: [
-      'Developed and launched 3 successful client projects',
+      'Developed and launched successfully the project',
       'Implemented responsive designs ensuring cross-browser compatibility',
       'Contributed to internal tools improving team productivity',
     ],
