@@ -1,4 +1,5 @@
 import { Project } from '@/types/project';
+import { BlogPost } from '@/types/blog';
 
 const API_URL = process.env.NEXT_PUBLIC_HYGRAPH_API_URL!;
 const API_TOKEN = process.env.HYGRAPH_API_TOKEN;
@@ -22,6 +23,7 @@ async function fetchAPI(query: string) {
       throw new Error(json.errors[0].message);
     }
 
+    // console.log('Hygraph response:', JSON.stringify(json.data, null, 2));
     return json.data;
   } catch (error) {
     console.error('Error fetching from Hygraph:', error);
@@ -76,7 +78,9 @@ export async function getProjectById(id: string): Promise<{ project: Project }> 
         image {
           url
         }
-        tags
+        tags {
+          title
+        }
         liveUrl
         githubUrl
         features
@@ -87,4 +91,79 @@ export async function getProjectById(id: string): Promise<{ project: Project }> 
     }
   `);
   return data;
+}
+
+export async function getBlogPosts(): Promise<{ posts: BlogPost[] }> {
+  const data = await fetchAPI(`
+    query BlogPosts {
+      posts(orderBy: publishedAt_DESC) {
+        id
+        title
+        slug
+        excerpt
+        content {
+          raw
+          html
+          text
+        }
+        coverImage {
+          url
+          width
+          height
+        }
+        author {
+          name
+          picture {
+            url
+          }
+        }
+        tags {
+          title
+        }
+        publishedAt
+        updatedAt
+      }
+    }
+  `);
+  return data;
+}
+
+export async function getBlogPostBySlug(slug: string): Promise<{ post: BlogPost }> {
+  const data = await fetchAPI(`
+    query BlogPostBySlug {
+      posts(where: { slug: "${slug}" }, first: 1) {
+        id
+        title
+        slug
+        excerpt
+        content {
+          raw
+          html
+          text
+        }
+        coverImage {
+          url
+          width
+          height
+        }
+        author {
+          name
+          picture {
+            url
+          }
+        }
+        tags {
+          title
+        }
+        publishedAt
+        updatedAt
+      }
+    }
+  `);
+  
+  if (!data.posts?.[0]) {
+    throw new Error(`Post with slug "${slug}" not found`);
+  }
+  
+  return { post: data.posts[0] };
 }
