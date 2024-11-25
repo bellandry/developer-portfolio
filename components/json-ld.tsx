@@ -1,10 +1,12 @@
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://laclass.dev';
+
 export const JsonLd = () => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Landry Bella',
     jobTitle: 'Senior React Developer',
-    url: 'https://laclass.dev',
+    url: baseUrl,
     sameAs: [
       'https://github.com/bellandry',
       'https://gitlab.com/bellandry.work',

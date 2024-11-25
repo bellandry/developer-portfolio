@@ -8,6 +8,7 @@ import { JsonLd } from '@/components/json-ld';
 import { LanguageProvider } from '@/context/language-context';
 
 const inter = Inter({ subsets: ['latin'] });
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://laclass.dev';
 
 export const metadata: Metadata = {
   title: 'Landry Bella | Senior React Developer',
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://laclass.dev',
+    url: baseUrl,
     title: 'Landry Bella | Senior React Developer',
     description: 'Senior React/Next.js developer with 5+ years of experience building modern web applications.',
     siteName: 'Landry Bella Portfolio',

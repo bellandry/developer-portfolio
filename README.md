@@ -40,10 +40,15 @@ yarn install
 3. Create a `.env` file in the root directory and add your environment variables:
 
 ```env
+# Email configuration for the contact form
 GMAIL_USER=your-email@gmail.com
 GMAIL_APP_PASSWORD=your-app-specific-password
 
-NEXT_PUBLIC_HYGRAPH_API_URL=
+# CMS API configuration
+NEXT_PUBLIC_HYGRAPH_API_URL=your-hygraph-api-url
+
+# Base URL for API endpoints (e.g., http://localhost:3000 for development)
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
 
 4. Run the development server:

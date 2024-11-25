@@ -5,6 +5,8 @@ import { getBlogPosts } from '@/lib/graphql';
 import { Metadata } from 'next';
 import { BlogEmptyState } from '@/components/blog-empty-state';
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://laclass.dev';
+
 export const metadata: Metadata = {
   title: 'Blog | Landry Bella',
   description: 'Technical articles and insights about React, Next.js, TypeScript, and modern web development.',
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     description: 'Technical articles and insights about React, Next.js, TypeScript, and modern web development.',
   },
   alternates: {
-    canonical: 'https://laclass.dev/blog',
+    canonical: `${baseUrl}/blog`,
   },
 };
 
@@ -44,7 +46,7 @@ export default async function BlogPage() {
     '@type': 'Blog',
     name: 'Landry Bella\'s Blog',
     description: 'Technical articles and insights about React, Next.js, TypeScript, and modern web development.',
-    url: 'https://laclass.dev/blog',
+    url: `${baseUrl}/blog`,
     author: {
       '@type': 'Person',
       name: 'Landry Bella',
@@ -60,7 +62,7 @@ export default async function BlogPage() {
         '@type': 'Person',
         name: post.author.name,
       },
-      url: `https://laclass.dev/blog/${post.slug}`,
+      url: `${baseUrl}/blog/${post.slug}`,
     })),
   };
 
