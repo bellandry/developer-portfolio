@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Navigation } from '@/components/navigation';
 import { MeshGradient } from '@/components/mesh-gradient';
 import { JsonLd } from '@/components/json-ld';
+import { LanguageProvider } from '@/context/language-context';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Landry Bella | Senior React Developer',
     description: 'Senior React/Next.js developer with 5+ years of experience building modern web applications.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -85,9 +86,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <MeshGradient />
-          <Navigation />
-          <main>{children}</main>
+          <LanguageProvider>
+            <MeshGradient />
+            <Navigation />
+            <main>{children}</main>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

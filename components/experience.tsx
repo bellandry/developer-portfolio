@@ -8,10 +8,12 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { experience } from '@/constants';
-
+import { translations } from '@/constants';
+import { useLanguage } from '@/context/language-context';
 
 export function Experience() {
+  const { language } = useLanguage();
+
   return (
     <section id="experience" className="py-20 px-4 ">
       <div className="container mx-auto max-w-4xl">
@@ -23,7 +25,7 @@ export function Experience() {
         >
           <h2 className="text-3xl font-bold mb-12 text-center">Work Experience</h2>
           <div className="space-y-6">
-            {experience.map((job, index) => (
+            {translations[language].experience.map((job, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -47,11 +49,10 @@ export function Experience() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4 text-muted-foreground">{job.description}</p>
                     <ul className="list-disc list-inside space-y-2">
-                      {job.achievements.map((achievement, i) => (
+                      {job.description.map((item, i) => (
                         <li key={i} className="text-sm text-muted-foreground">
-                          {achievement}
+                          {item}
                         </li>
                       ))}
                     </ul>

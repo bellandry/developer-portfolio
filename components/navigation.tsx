@@ -12,13 +12,17 @@ import {
   SheetContent,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { navItems } from '@/constants';
+import { LanguageSwitcher } from '@/components/language-switcher';
+import { useLanguage } from '@/context/language-context';
+import { cn } from '@/lib/utils';
 
 export function Navigation() {
   const { setTheme, theme } = useTheme();
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
+  const { t } = useLanguage();
+  const navItems = t('navItems');
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -64,19 +68,21 @@ export function Navigation() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
-          {navItems.map((item) => (
+          {(navItems as { name: string; href: string }[]).map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className={`transition-colors ${
+              className={cn(
+                'transition-colors',
                 isActiveLink(item.href)
                   ? 'text-foreground font-medium'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
+                  : 'text-neutral-600 hover:text-foreground'
+              )}
             >
               {item.name}
             </Link>
           ))}
+          <LanguageSwitcher />
           <Button
             variant="ghost"
             size="icon"
@@ -89,6 +95,7 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         <div className="md:hidden flex items-center gap-2">
+          <LanguageSwitcher />
           <Button
             variant="ghost"
             size="icon"
@@ -105,19 +112,20 @@ export function Navigation() {
             </SheetTrigger>
             <SheetContent className="bg-background/60 backdrop-blur-sm flex flex-col justify-between">
               <div className="flex flex-col gap-4 mt-8">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={`text-lg font-semibold transition-colors ${
-                      isActiveLink(item.href)
-                        ? 'text-foreground'
-                        : 'text-neutral-600 hover:text-foreground'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+              {(navItems as { name: string; href: string }[]).map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={cn(
+                'transition-colors',
+                isActiveLink(item.href)
+                  ? 'text-foreground font-medium'
+                  : 'text-neutral-600 hover:text-foreground'
+              )}
+            >
+              {item.name}
+            </Link>
+          ))}
               </div>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button variant="outline" asChild>

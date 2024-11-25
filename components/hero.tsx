@@ -3,8 +3,13 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Github, Gitlab, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/context/language-context';
+import { translations } from '@/constants';
 
 export function Hero() {
+  const { language } = useLanguage();
+  const t = translations[language].hero;
+
   return (
     <section className="min-h-screen flex items-center justify-center py-20 px-4">
       <div className="max-w-3xl mx-auto text-center">
@@ -14,18 +19,17 @@ export function Hero() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Hi, I&apos;m Landry Bella
+            {t.greeting}
             <br />
-            Senior React Developer
+            {t.role}
           </h1>
           <p className="text-xl text-muted-foreground mb-8">
-            Building exceptional web experiences with React and Next.js.
-            5+ years of crafting modern, performant applications.
+            {t.description}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild>
               <a href="#contact">
-                Let&apos;s work together
+                {t.cta}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

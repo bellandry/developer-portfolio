@@ -2,7 +2,8 @@
 
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { skills } from '@/constants';
+import { translations } from '@/constants';
+import { useLanguage } from '@/context/language-context';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   SiReact,
@@ -27,6 +28,16 @@ import {
   SiGooglegemini,
   SiHttpie,
 } from 'react-icons/si';
+
+interface Skill {
+  name: string;
+  icon: string;
+  description: string;
+}
+
+interface SkillCategory {
+  [category: string]: Skill[];
+}
 
 const iconMap = {
   react: SiReact,
@@ -55,6 +66,8 @@ const iconMap = {
 export function Skills() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const { language } = useLanguage();
+  const skills: SkillCategory = translations[language].skills;
 
   return (
     <section id="skills" className="py-20 px-4">
@@ -99,23 +112,25 @@ export function Skills() {
                             background: useMotionTemplate`
                               radial-gradient(
                                 500px circle at ${mouseX}px ${mouseY}px,
-                                rgba(var(--primary-rgb) / 0.15),
+                                rgba(var(--primary-rgb), 0.1),
                                 transparent 80%
                               )
                             `,
                           }}
                         />
-                        <Card className="h-full relative transition-all duration-300 bg-gradient-to-r from-transparent via-transparent to-transparent before:absolute before:inset-0 before:p-[2px] before:rounded-lg before:bg-gradient-to-r before:from-primary/40 before:via-primary/60 before:to-primary/40 before:opacity-0 before:transition-opacity group-hover:before:opacity-100 overflow-hidden">
-                          <CardContent className="relative pt-6 z-10 bg-background rounded-lg">
-                            <div className="flex items-center gap-4 mb-4">
-                              <div className="p-2 bg-primary/10 rounded-lg transition-colors duration-300 group-hover:bg-primary/20">
-                                <Icon className="w-6 h-6 text-primary/80 transition-colors duration-300 group-hover:text-primary" />
+                        <Card className="relative overflow-hidden transition-all duration-200 group-hover:shadow-lg border-primary/20">
+                          <CardContent className="p-6">
+                            <div className="flex items-center gap-4">
+                              <div className="p-2 rounded-lg bg-primary/10">
+                                <Icon className="w-6 h-6 text-primary" />
                               </div>
-                              <h3 className="font-semibold transition-colors duration-300 group-hover:text-primary">{skill.name}</h3>
+                              <div>
+                                <h3 className="font-medium">{skill.name}</h3>
+                                <p className="text-sm text-muted-foreground">
+                                  {skill.description}
+                                </p>
+                              </div>
                             </div>
-                            <p className="text-sm text-muted-foreground">
-                              {skill.description}
-                            </p>
                           </CardContent>
                         </Card>
                       </motion.div>
