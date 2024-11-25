@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export function AnimatedBlobs() {
   return (
@@ -15,7 +15,7 @@ export function AnimatedBlobs() {
           duration: 25,
           repeat: Infinity,
           repeatType: "reverse",
-          ease: "linear"
+          ease: "linear",
         }}
       />
       <motion.div
@@ -28,7 +28,7 @@ export function AnimatedBlobs() {
           duration: 20,
           repeat: Infinity,
           repeatType: "reverse",
-          ease: "linear"
+          ease: "linear",
         }}
       />
       <motion.div
@@ -41,7 +41,7 @@ export function AnimatedBlobs() {
           duration: 22,
           repeat: Infinity,
           repeatType: "reverse",
-          ease: "linear"
+          ease: "linear",
         }}
       />
     </div>

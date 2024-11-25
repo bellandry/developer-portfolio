@@ -90,9 +90,11 @@ export function RichText({ content }: RichTextProps) {
                 children.props?.text ||
                 children.props?.content ||
                 children.props?.children;
-console.log("le texte ", text)
+
               if (Array.isArray(text)) {
-                codeContent = text[0]?.children ? text[0]?.children[0]?.text : text[0]?.text;
+                codeContent = text[0]?.children
+                  ? text[0]?.children[0]?.text
+                  : text[0]?.text;
               } else {
                 codeContent =
                   typeof text === "string"
