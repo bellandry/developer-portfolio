@@ -21,7 +21,7 @@ export const translations = {
       role: "Full-Stack Web Developer",
       description:
         "Building exceptional web experiences with TypeScript, React and Next.js. 5+ years of crafting modern, performant applications.",
-      cta: "Get in touch",
+      cta: "Get in Touch",
     },
     navItems: [
       { name: "Home", href: "/" },
