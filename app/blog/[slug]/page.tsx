@@ -4,6 +4,9 @@ import { getBlogPostBySlug, getBlogPosts } from '@/lib/graphql';
 import { RichText } from '@/components/rich-text';
 import { Metadata } from 'next';
 import { BlogEmptyState } from '@/components/blog-empty-state';
+import { BlogPost } from '@/types/blog';
+import { LatestPosts } from '@/components/latest-posts';
+import { BlogFooter } from '@/components/blog-footer';
 
 interface BlogPostPageProps {
   params: {
@@ -96,9 +99,16 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://laclass.dev';
 
+  let post;
+  let posts: BlogPost[] = [];
   try {
-    const { post } = await getBlogPostBySlug(params.slug);
+    const [postData, postsData] = await Promise.all([
+      getBlogPostBySlug(params.slug),
+      getBlogPosts(),
+    ]);
 
+    post = postData?.post || {};
+    posts = postsData?.posts || [];
     if (!post) {
       return (
         <BlogEmptyState 
@@ -194,6 +204,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           </div>
         </article>
+        <LatestPosts posts={posts} />
       </>
     );
   } catch (error) {

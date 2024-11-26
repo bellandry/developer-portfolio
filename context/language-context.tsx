@@ -2,7 +2,7 @@
 
 import type { Language } from "@/constants/translations";
 import { translations } from "@/constants/translations";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 type LanguageContextType = {
   language: Language;
@@ -17,7 +17,18 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<Language>("fr"); // Default to French
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Get browser language
+      const browserLang = window.navigator.language.toLowerCase();
+      
+      // Check if language starts with 'fr' (includes fr-FR, fr-CA, etc.)
+      const isFrench = browserLang.startsWith('fr');
+      setLanguage(isFrench ? 'fr' : 'en');
+    }
+  }, []); // Run once on mount
 
   const t = (key: keyof typeof translations.en) => {
     return translations[language][key];

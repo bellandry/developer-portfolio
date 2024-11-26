@@ -18,10 +18,10 @@ export const translations = {
   en: {
     hero: {
       greeting: "Hi, I'm Landry Bella",
-      role: "Fullstack Next.js Developer",
+      role: "Full-Stack Web Developer",
       description:
-        "Building exceptional web experiences with React and Next.js. 5+ years of crafting modern, performant applications.",
-      cta: "Let's work together",
+        "Building exceptional web experiences with TypeScript, React and Next.js. 5+ years of crafting modern, performant applications.",
+      cta: "Get in touch",
     },
     navItems: [
       { name: "Home", href: "/" },
@@ -29,7 +29,6 @@ export const translations = {
       { name: "Projects", href: "/#projects" },
       { name: "Skills", href: "/#skills" },
       { name: "Blog", href: "/blog" },
-      { name: "Contact", href: "/#contact" },
     ],
     experience: [
       {
@@ -70,120 +69,17 @@ export const translations = {
         ],
       },
     ],
-    skills: {
-      frontend: [
-        {
-          name: "React",
-          icon: "react",
-          description:
-            "Building efficient and reusable user interfaces with modern React patterns and hooks.",
-        },
-        {
-          name: "Next.js",
-          icon: "nextjs",
-          description:
-            "Creating performant, SEO-friendly applications with server-side rendering and static generation.",
-        },
-        {
-          name: "Vue.js",
-          icon: "vue",
-          description:
-            "Creating interactive web applications with progressive JavaScript framework.",
-        },
-        {
-          name: "TypeScript",
-          icon: "typescript",
-          description:
-            "Writing type-safe code to reduce bugs and improve development experience.",
-        },
-        {
-          name: "Tailwind CSS",
-          icon: "tailwind",
-          description:
-            "Crafting responsive and beautiful UIs with utility-first CSS framework.",
-        },
-        {
-          name: "State Management",
-          icon: "redux",
-          description:
-            "Managing complex application state with modern Redux patterns.",
-        },
-      ],
-      backend: [
-        {
-          name: "Node.js",
-          icon: "nodejs",
-          description:
-            "Building scalable server-side applications with JavaScript runtime.",
-        },
-        {
-          name: "Laravel",
-          icon: "laravel",
-          description:
-            "Developing robust PHP applications with elegant syntax and features.",
-        },
-        {
-          name: "Database & ORMs",
-          icon: "postgresql",
-          description:
-            "Working with MySQL, PostgreSQL, MongoDB, Prisma, and Drizzle ORM.",
-        },
-        {
-          name: "Express & GraphQL",
-          icon: "graphql",
-          description:
-            "Creating efficient APIs with Express.js and GraphQL for flexible data querying.",
-        },
-        {
-          name: "AI Integration",
-          icon: "ai",
-          description:
-            "Implementing Generative AI solutions with OpenAI and Google Gemini.",
-        },
-        {
-          name: "API Validation",
-          icon: "zod",
-          description: "Ensuring type-safe APIs and data validation with Zod.",
-        },
-      ],
-      tools: [
-        {
-          name: "Git, Github & Gitlab",
-          icon: "git",
-          description:
-            "Version control and collaborative development workflows.",
-        },
-        {
-          name: "Docker",
-          icon: "docker",
-          description: "Containerizing applications for consistent deployment.",
-        },
-        {
-          name: "Testing",
-          icon: "jest",
-          description: "Writing and maintaining comprehensive test suites.",
-        },
-        {
-          name: "GitHub Actions",
-          icon: "github",
-          description: "Automating CI/CD pipelines for seamless deployment.",
-        },
-        {
-          name: "Vercel",
-          icon: "vercel",
-          description:
-            "Primary development environment with extensive customization.",
-        },
-      ],
+    footer: {
+      copyright: `© ${new Date().getFullYear()} Landry Bella. All rights reserved.`,
     },
   },
   fr: {
     hero: {
       greeting: "Hello! je suis Landry Bella",
-      role: "Développeur Full-Stack Next.js",
+      role: "Développeur Web Full-Stack",
       description:
-        "Je crée des expériences web exceptionnelles avec React et Next.js. Plus de 5 ans d'expérience dans le développement d'applications modernes et performantes.",
-      cta: "Travaillons ensemble",
+        "Je crée des expériences web exceptionnelles avec TypeScript, React et Next.js. Plus de 5 ans d'expérience dans le développement d'applications modernes et performantes.",
+      cta: "On se parle ?",
     },
     navItems: [
       { name: "Accueil", href: "/" },
@@ -191,7 +87,6 @@ export const translations = {
       { name: "Projets", href: "/#projects" },
       { name: "Compétences", href: "/#skills" },
       { name: "Blog", href: "/blog" },
-      { name: "Contact", href: "/#contact" },
     ],
     experience: [
       {
@@ -232,114 +127,8 @@ export const translations = {
         ],
       },
     ],
-    skills: {
-      frontend: [
-        {
-          name: "React",
-          icon: "react",
-          description:
-            "Construction d'interfaces utilisateur efficaces et réutilisables avec les patterns et hooks React modernes.",
-        },
-        {
-          name: "Next.js",
-          icon: "nextjs",
-          description:
-            "Création d'applications performantes et optimisées pour le SEO avec rendu côté serveur et génération statique.",
-        },
-        {
-          name: "Vue.js",
-          icon: "vue",
-          description:
-            "Création d'applications web interactives avec un framework JavaScript progressif.",
-        },
-        {
-          name: "TypeScript",
-          icon: "typescript",
-          description:
-            "Écriture de code typé sûr pour réduire les bugs et améliorer l'expérience de développement.",
-        },
-        {
-          name: "Tailwind CSS",
-          icon: "tailwind",
-          description:
-            "Création d'interfaces utilisateur belles et responsives avec un framework CSS utility-first.",
-        },
-        {
-          name: "State Management",
-          icon: "redux",
-          description:
-            "Gestion d'état d'application complexe avec les patterns Redux modernes.",
-        },
-      ],
-      backend: [
-        {
-          name: "Node.js",
-          icon: "nodejs",
-          description:
-            "Construction d'applications côté serveur évolutives avec l'environnement d'exécution JavaScript.",
-        },
-        {
-          name: "Laravel",
-          icon: "laravel",
-          description:
-            "Développement d'applications PHP robustes avec une syntaxe et des fonctionnalités élégantes.",
-        },
-        {
-          name: "Base de données & ORMs",
-          icon: "postgresql",
-          description:
-            "Travail avec MySQL, PostgreSQL, MongoDB, Prisma et Drizzle ORM.",
-        },
-        {
-          name: "Express & GraphQL",
-          icon: "graphql",
-          description:
-            "Création d'APIs efficaces avec Express.js et GraphQL pour des requêtes de données flexibles.",
-        },
-        {
-          name: "Intégration IA",
-          icon: "ai",
-          description:
-            "Implémentation de solutions IA génératives avec OpenAI et Google Gemini.",
-        },
-        {
-          name: "Validation API",
-          icon: "zod",
-          description:
-            "Assurance d'APIs et de validation de données type-safe avec Zod.",
-        },
-      ],
-      tools: [
-        {
-          name: "Git, Github & Gitlab",
-          icon: "git",
-          description:
-            "Contrôle de version et flux de développement collaboratif.",
-        },
-        {
-          name: "Docker",
-          icon: "docker",
-          description:
-            "Conteneurisation d'applications pour un déploiement cohérent.",
-        },
-        {
-          name: "Tests",
-          icon: "jest",
-          description: "Écriture et maintenance de suites de tests complètes.",
-        },
-        {
-          name: "GitHub Actions",
-          icon: "github",
-          description:
-            "Automatisation des pipelines CI/CD pour un déploiement transparent.",
-        },
-        {
-          name: "Vercel",
-          icon: "vercel",
-          description:
-            "Environnement de développement principal avec personnalisation extensive.",
-        },
-      ],
+    footer: {
+      copyright: `© ${new Date().getFullYear()} Landry Bella. Tous droits réservés.`,
     },
   },
 };

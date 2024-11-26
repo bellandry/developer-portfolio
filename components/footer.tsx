@@ -1,48 +1,63 @@
-import React from 'react'
-import { Button } from './ui/button'
-import { Github, Gitlab, Linkedin, Mail } from 'lucide-react'
+"use client";
 
-const Footer = () => {
+import { navItems } from "@/constants";
+import { useLanguage } from '@/lib/useLanguage';
+import { translations } from '@/constants/translations';
+import Link from "next/link";
+import { FaGithub, FaGitlab, FaLinkedin } from "react-icons/fa";
+
+export default function Footer() {
+  const language = useLanguage();
+  const t = translations[language];
+
   return (
-    <footer className="border-t py-6 px-2 md:py-0 text-md">
-        <div className="container mx-auto flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-          <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0 justify-between w-full">
-            <p className="text-center text-sm leading-loose text-muted-foreground ">
-              <a
-                href="https://laclass.dev"
-                target="_blank"
-                rel="noreferrer"
-                className="font-medium underline underline-offset-4"
+    <footer className="mt-auto py-8 border-t">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-sm text-muted-foreground">
+            <p>{t.footer.copyright}</p>
+          </div>
+
+          <nav className="flex flex-wrap justify-center items-center gap-4">
+            {t.navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="transition-colors"
               >
-                Laclass Dev
-              </a>
-            </p>
-            <div className="flex gap-2">
-            <Button variant="outline" asChild>
-              <a href="https://github.com/bellandry" target="_blank" rel="noopener noreferrer">
-                <Github className=" h-4 w-4" />
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href="https://gitlab.com/bellandry.work" target="_blank" rel="noopener noreferrer">
-                <Gitlab className=" h-4 w-4" />
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href="https://linkedin.com/in/bellandry" target="_blank" rel="noopener noreferrer">
-                <Linkedin className=" h-4 w-4" />
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href="mailto:contact@laclass.dev">
-                <Mail className=" h-4 w-4" />
-              </a>
-            </Button>
-            </div>
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-4">
+            <Link
+              href="https://github.com/bellandry"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <FaGithub className="w-5 h-5" />
+            </Link>
+            <Link
+              href="https://gitlab.com/bellandry.work"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <FaGitlab className="w-5 h-5" />
+            </Link>
+            <Link
+              href="https://linkedin.com/in/bellandry"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <FaLinkedin className="w-5 h-5" />
+            </Link>
           </div>
         </div>
-      </footer>
-  )
+      </div>
+    </footer>
+  );
 }
-
-export default Footer

@@ -1,13 +1,15 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { ArrowRight, Github, Gitlab, Linkedin, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/context/language-context';
-import { translations } from '@/constants';
+import { Button } from "@/components/ui/button";
+import { translations } from "@/constants";
+import { useLanguage } from "@/context/language-context";
+import { useContactStore } from "@/store/use-contact-store";
+import { motion } from "framer-motion";
+import { ArrowRight, Github, Gitlab, Linkedin } from "lucide-react";
 
 export function Hero() {
   const { language } = useLanguage();
+  const { open } = useContactStore();
   const t = translations[language].hero;
 
   return (
@@ -23,28 +25,36 @@ export function Hero() {
             <br />
             {t.role}
           </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            {t.description}
-          </p>
+          <p className="text-xl text-muted-foreground mb-8">{t.description}</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild>
-              <a href="#contact">
-                {t.cta}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+            <Button onClick={open}>
+              {t.cta}
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button variant="outline" asChild>
-              <a href="https://github.com/bellandry" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/bellandry"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Github className="h-4 w-4" />
               </a>
             </Button>
             <Button variant="outline" asChild>
-              <a href="https://gitlab.com/bellandry.work" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://gitlab.com/bellandry.work"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Gitlab className="h-4 w-4" />
               </a>
             </Button>
             <Button variant="outline" asChild>
-              <a href="https://linkedin.com/in/bellandry" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://linkedin.com/in/bellandry"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Linkedin className="h-4 w-4" />
               </a>
             </Button>

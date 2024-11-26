@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { format } from 'date-fns';
-import { BlogPost } from '@/types/blog';
+import { BlogPost } from "@/types/blog";
+import { format } from "date-fns";
+import Image from "next/image";
+import Link from "next/link";
 
 interface LatestPostsProps {
   posts: BlogPost[];
@@ -12,9 +12,9 @@ export function LatestPosts({ posts }: LatestPostsProps) {
     <section className="py-16">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold">Latest Posts</h2>
-          <Link 
-            href="/blog" 
+          <h2 className="text-2xl md:text-3xl font-bold">Latest Posts</h2>
+          <Link
+            href="/blog"
             className="text-primary hover:text-primary/80 transition-colors"
           >
             View all posts →
@@ -38,7 +38,7 @@ export function LatestPosts({ posts }: LatestPostsProps) {
                   {post.title}
                 </h3>
                 <p className="text-muted-foreground text-sm mb-2">
-                  {format(new Date(post.publishedAt), 'MMMM d, yyyy')}
+                  {format(new Date(post.publishedAt), "MMMM d, yyyy")}
                 </p>
                 <p className="text-muted-foreground line-clamp-2">
                   {post.excerpt}
