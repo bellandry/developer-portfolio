@@ -61,9 +61,9 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
           {project.technicalDetails && (
             <div>
               <h3 className="text-lg font-semibold mb-2">Technical Details</h3>
-              <pre className="text-muted-foreground">
+              <p className="text-muted-foreground">
                 {project.technicalDetails}
-              </pre>
+              </p>
             </div>
           )}
 
