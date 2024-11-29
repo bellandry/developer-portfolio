@@ -98,8 +98,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   // Get browser language
-  const isFrench = typeof window !== 'undefined' && window.navigator.language.toLowerCase().startsWith('fr');
-  const lang = isFrench ? 'fr' : 'en';
+  const isFrench =
+    typeof window !== "undefined" &&
+    window.navigator.language.toLowerCase().startsWith("fr");
+  const lang = isFrench ? "fr" : "en";
 
   return (
     <html lang={lang} suppressHydrationWarning>

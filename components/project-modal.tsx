@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { Project } from '@/types/project';
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, X } from 'lucide-react';
-import Image from 'next/image';
-import { RichText } from './rich-text';
+} from "@/components/ui/dialog";
+import { Project } from "@/types/project";
+import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
+import { RichText } from "./rich-text";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -28,13 +28,10 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
         <DialogHeader>
           <div className="flex items-center justify-between">
             <DialogTitle className="text-2xl">{project.title}</DialogTitle>
-            <Button variant="ghost" size="icon" onClick={onClose}>
-              <X className="h-4 w-4" />
-            </Button>
           </div>
           <DialogDescription>{project.description}</DialogDescription>
         </DialogHeader>
-        
+
         <div className="relative aspect-video mb-6">
           <Image
             src={project.image.url}
@@ -64,7 +61,9 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
           {project.technicalDetails && (
             <div>
               <h3 className="text-lg font-semibold mb-2">Technical Details</h3>
-              <p className="text-muted-foreground">{project.technicalDetails}</p>
+              <pre className="text-muted-foreground">
+                {project.technicalDetails}
+              </pre>
             </div>
           )}
 
@@ -81,13 +80,21 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
 
           <div className="flex gap-4">
             <Button asChild>
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <ExternalLink className="mr-2 h-4 w-4" />
                 View Live Demo
               </a>
             </Button>
             <Button variant="outline" asChild>
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Github className="mr-2 h-4 w-4" />
                 View Source Code
               </a>
