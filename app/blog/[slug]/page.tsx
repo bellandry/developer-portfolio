@@ -1,6 +1,8 @@
 import { BlogEmptyState } from "@/components/blog-empty-state";
 import { LatestPosts } from "@/components/latest-posts";
 import { RichText } from "@/components/rich-text";
+import { LikeButton } from "@/components/blog/like-button";
+import { CommentSection } from "@/components/blog/comment-section";
 import { getBlogPostBySlug, getBlogPosts } from "@/lib/graphql";
 import { BlogPost } from "@/types/blog";
 import { format } from "date-fns";
@@ -216,6 +218,28 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               itemProp="articleBody"
             >
               <RichText content={post.content} />
+            </div>
+            <div className="mt-8 border-t pt-8">
+              <LikeButton
+                initialLikes={0}
+                postId={post.slug}
+                onLike={async (postId) => {
+                  // TODO: Implement like functionality
+                  console.log('Liked post:', postId);
+                }}
+              />
+              <CommentSection
+                postId={post.slug}
+                comments={[]}
+                onAddComment={async (content) => {
+                  // TODO: Implement add comment functionality
+                  console.log('New comment:', content);
+                }}
+                onReply={async (commentId, content) => {
+                  // TODO: Implement reply functionality
+                  console.log('New reply to', commentId, ':', content);
+                }}
+              />
             </div>
           </div>
         </article>
