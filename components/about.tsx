@@ -19,19 +19,19 @@ const About = () => {
           transition={{ duration: 0.5 }}
         >
           <motion.div
-            className="flex flex-col md:flex-row items-center gap-14"
+            className="flex flex-col md:flex-row items-center gap-10 md:gap-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <motion.div
-              className="relative w-40 h-40 md:w-64 md:h-64 my-14"
+              className="relative w-40 h-40 md:w-64 md:h-64"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               {/* Effet de glow animé */}
               <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 opacity-80"
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 opacity-90"
                 animate={{
                   rotate: 360,
                 }}

@@ -19,13 +19,9 @@ export default function Footer() {
 
           <nav className="flex flex-wrap justify-center items-center gap-4">
             {t.navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="transition-colors"
-              >
+              <a key={item.name} href={item.href} className="transition-colors">
                 {item.name}
-              </Link>
+              </a>
             ))}
           </nav>
 

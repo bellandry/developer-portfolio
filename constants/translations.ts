@@ -17,10 +17,10 @@ export type Skill = {
 export const translations = {
   en: {
     hero: {
-      greeting: "Hi, I'm Landry Bella",
+      greeting: "Landry Bella",
       role: "Full-Stack Web Developer",
       description:
-        "Building exceptional web experiences with TypeScript, React and Next.js. 5+ years of crafting modern, performant applications.",
+        "With over 5 years of experience, I assist you in creating modern applications tailored to your needs using TypeScript, React, Next.js, and Laravel.",
       cta: "Get in Touch",
     },
     navItems: [
@@ -33,46 +33,43 @@ export const translations = {
     ],
     about: {
       title: "About me",
-      description:
-        "Passionate Full Stack Developer specializing in modern technologies such as JavaScript, TypeScript, Node.js, React, Vue.js, PHP, and Laravel. With strong technical expertise and a versatile approach, I design innovative and high-performance digital solutions. Continuously staying ahead of industry trends, I am committed to turning your ideas into impactful and value-driven projects.",
-      citation: "Best Citation",
+      description: `Passionate Full Stack Developer with several years of experience working in companies, I help organizations create innovative and high-performing digital solutions. Specialized in modern technologies such as JavaScript, React, TypeScript, and Laravel, I adopt a pragmatic approach to tackle business challenges.
+        Always staying up-to-date with the latest trends, I strive to transform every idea into a concrete project tailored to real needs and delivering high value`,
+      citation: "Favorite Quote",
     },
     experience: [
       {
         title: "Senior Web Developer",
         company: "Solution Quickdo Canada",
         period: "2023 - 2024",
-        description:
-          "Develope and maintain web applications using modern technologies and best practices",
         achievements: [
-          "Implemented automated testing increasing code coverage to 85%",
-          "Reduced application bundle size by 40% through code splitting and lazy loading",
-          "Implemented CI/CD pipeline reducing deployment time by 60%",
+          "Developed and maintained modern web applications using cutting-edge technologies.",
+          "Implemented automated tests, increasing code coverage from 65% to 85%, thus reducing regression risks.",
+          "Optimized application file sizes by 40% using code splitting and lazy loading, improving application performance.",
+          "Designed and deployed a CI/CD pipeline, reducing deployment time by 3x and improving production release frequency.",
         ],
       },
       {
-        title: "Tech Lead & Full-Stack Developer",
+        title: "Technical Lead & Full-Stack Developer",
         company: "CINAF TV S.A",
         period: "2021 - 2023",
-        description:
-          "Improve user experience, mentored junior developers, and implemented best practices.",
         achievements: [
-          "Whitch to Symfony for back-end and to Vue.js & React for front-ends",
-          "Led team of 8 developers in successful delivery of major features",
-          "Developed reusable component library used across multiple projects",
-          "Improved application performance by 50% through optimization techniques",
+          "Transformed the company’s technical architecture by migrating from PHP to Symfony for the back-end and integrating Vue.js and React for the front-end.",
+          "Led a team of 8 developers, successfully delivering key features on time.",
+          "Designed a reusable component library, adopted in 100% of the company's projects, standardizing practices and reducing development timelines.",
+          "Optimized application performance by 50% through advanced query optimization and resource management techniques.",
+          "Mentored junior developers, improving their skills and productivity.",
         ],
       },
       {
-        title: "Frontend Developer",
+        title: "Web Developer",
         company: "CINAF TV S.A",
         period: "2019 - 2021",
-        description:
-          "Started career working on VOD platform projects using PHP and related technologies.",
         achievements: [
-          "Developed and launched successfully the project",
-          "Implemented responsive designs ensuring cross-browser compatibility",
-          "Contributed to internal tools improving team productivity",
+          "Started my career by developing and successfully launching a VOD platform based on PHP and related technologies.",
+          "Implemented responsive designs ensuring cross-browser compatibility for a better user experience.",
+          "Contributed to improving internal tools, increasing team productivity by 20% through automation and workflow optimizations.",
+          "Performed a security audit after multiple hacking incidents, enhancing the robustness and reliability of the systems.",
         ],
       },
     ],
@@ -82,11 +79,11 @@ export const translations = {
   },
   fr: {
     hero: {
-      greeting: "Hello! je suis Landry Bella",
+      greeting: "Landry Bella",
       role: "Développeur Web Full-Stack",
       description:
-        "Je crée des expériences web exceptionnelles avec TypeScript, React et Next.js. Plus de 5 ans d'expérience dans le développement d'applications modernes et performantes.",
-      cta: "On se parle ?",
+        "Avec plus de 5 ans d'expérience, je vous accompagne dans la création d’applications modernes qui s'adaptent à vos besoins avec TypeScript, React, Next.js et Laravel.",
+      cta: "Discutons de votre projet",
     },
     navItems: [
       { name: "Accueil", href: "/#" },
@@ -98,8 +95,8 @@ export const translations = {
     ],
     about: {
       title: "A propos de moi",
-      description:
-        "Développeur Full Stack passionné, spécialisé dans des technologies modernes telles que JavaScript, TypeScript, Node.js, React, Vue.js, PHP et Laravel. Fort d’une expertise technique et d’une approche polyvalente, je conçois des solutions numériques performantes et innovantes. Toujours en veille sur les dernières tendances, je m’engage à transformer vos idées en projets concrets et à forte valeur ajoutée.",
+      description: `Développeur Full Stack passionné, avec plusieurs années d'expérience en entreprise, j'accompagne les organisations dans la création de solutions digitales innovantes et performantes. Spécialisé dans des technologies modernes comme JavaScript, React, TypeScript, et Laravel, je m'appuie sur une approche pragmatique pour répondre aux défis métiers.
+        Toujours en veille sur les dernières tendances, je m'efforce de transformer chaque idée en un projet concret, adapté aux besoins réels et à forte valeur ajoutée.`,
       citation: "Citation Favorite",
     },
     experience: [
@@ -107,37 +104,34 @@ export const translations = {
         title: "Développeur Web Senior",
         company: "Solution Quickdo Canada",
         period: "2023 - 2024",
-        description:
-          "Développement et maintenance d’applications web en utilisant des technologies modernes et les meilleures pratiques.",
         achievements: [
-          "Mise en place de tests automatisés, augmentant la couverture de code à 85 %",
-          "Réduction de la taille des fichiers de l’application de 40 % grâce au code splitting et au lazy loading",
-          "Implémentation d’un pipeline CI/CD, réduisant le temps de déploiement de 60 %",
+          "Développé et maintenu des applications web modernes en utilisant des technologies de pointe.",
+          "Mis en œuvre des tests automatisés, augmentant la couverture de code de 65 % à 85 %, réduisant ainsi les risques de régression.",
+          "Optimisé la taille des fichiers de l’application de 40 % grâce au code splitting et au lazy loading, améliorant la performance des applications.",
+          "Conçu et déployé un pipeline CI/CD, divisant par 3 le temps de déploiement et améliorant la fréquence des mises en production.",
         ],
       },
       {
         title: "Responsable Technique & Développeur Full-Stack",
         company: "CINAF TV S.A",
         period: "2021 - 2023",
-        description:
-          "Amélioration de l’expérience utilisateur, mentorat des développeurs juniors et mise en œuvre des meilleures pratiques.",
         achievements: [
-          "Transition vers Symfony pour le back-end et Vue.js & React pour les front-ends",
-          "Direction d’une équipe de 8 développeurs pour livrer avec succès des fonctionnalités majeures",
-          "Création d’une bibliothèque de composants réutilisables utilisée dans plusieurs projets",
-          "Amélioration des performances des applications de 50 % grâce à des techniques d’optimisation",
+          "Transformé l’architecture technique de l’entreprise en passant de PHP à Symfony pour le back-end et en intégrant Vue.js et React pour les front-ends.",
+          "Dirigé une équipe de 8 développeurs, livrant avec succès des fonctionnalités clés dans le respect des délais.",
+          "Conçu une bibliothèque de composants réutilisables, adoptée dans 100 % des projets de l’entreprise, standardisant les pratiques et réduisant les délais de développement.",
+          "Optimisé les performances des applications de 50 %, grâce à des techniques avancées d’optimisation de requêtes et de gestion des ressources.",
+          "Mentoré des développeurs juniors, améliorant leurs compétences et leur productivité.",
         ],
       },
       {
-        title: "Développeur Front-End",
+        title: "Développeur Web",
         company: "CINAF TV S.A",
         period: "2019 - 2021",
-        description:
-          "Début de carrière en travaillant sur des projets de plateformes de VOD en utilisant PHP et les technologies associées.",
         achievements: [
-          "Développement et lancement réussi du projet",
-          "Mise en œuvre de designs responsifs garantissant une compatibilité inter-navigateurs",
-          "Contribution à des outils internes améliorant la productivité de l’équipe",
+          "Débuté ma carrière en développant et lançant avec succès une plateforme VOD basée sur PHP et des technologies associées.",
+          "Implémenté des designs réactifs garantissant une compatibilité inter-navigateurs pour une meilleure expérience utilisateur.",
+          "Contribué à l’amélioration des outils internes, augmentant la productivité de l’équipe de 20 % grâce à des automatisations et des optimisations de workflow.",
+          "Réalisé un audit de sécurité après plusieurs incidents de hacking, améliorant la robustesse et la fiabilité des systèmes.",
         ],
       },
     ],

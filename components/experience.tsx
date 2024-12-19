@@ -55,9 +55,6 @@ export function Experience() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {job.description}
-                    </p>
                     <ul className="list-disc list-inside space-y-2">
                       {job.achievements.map((item, i) => (
                         <li key={i} className="text-sm text-muted-foreground">

@@ -21,13 +21,13 @@ export function Hero() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            {t.greeting}
+            <span className="text-3xl md:text-5xl">-{t.greeting}-</span>
             <br />
             {t.role}
           </h1>
           <p className="text-xl text-muted-foreground mb-8">{t.description}</p>
           <div className="flex flex-wrap justify-center gap-2">
-            <Button onClick={open}>
+            <Button onClick={open} className="w-full md:w-auto my-2">
               {t.cta}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
