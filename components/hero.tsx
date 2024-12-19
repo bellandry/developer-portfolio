@@ -36,6 +36,7 @@ export function Hero() {
                 href="https://github.com/bellandry"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="github"
               >
                 <Github className="h-4 w-4" />
               </a>
@@ -45,6 +46,7 @@ export function Hero() {
                 href="https://gitlab.com/bellandry.work"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="gitlab"
               >
                 <Gitlab className="h-4 w-4" />
               </a>
@@ -54,6 +56,7 @@ export function Hero() {
                 href="https://linkedin.com/in/bellandry"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="linkedin"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
