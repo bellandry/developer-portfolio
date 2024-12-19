@@ -25,6 +25,7 @@ export const translations = {
     },
     navItems: [
       { name: "Home", href: "/#" },
+      { name: "About", href: "/#about" },
       { name: "Experience", href: "/#experience" },
       { name: "Projects", href: "/#projects" },
       { name: "Skills", href: "/#skills" },
@@ -89,6 +90,7 @@ export const translations = {
     },
     navItems: [
       { name: "Accueil", href: "/#" },
+      { name: "A propos", href: "/#about" },
       { name: "Expérience", href: "/#experience" },
       { name: "Projets", href: "/#projects" },
       { name: "Compétences", href: "/#skills" },
@@ -97,7 +99,7 @@ export const translations = {
     about: {
       title: "A propos de moi",
       description:
-        "Développeur Full Stack passionné, spécialisé dans des technologies modernes telles que JavaScript, TypeScript, Node.js, React, Vue.js, PHP et Laravel.Fort d’une expertise technique et d’une approche polyvalente, je conçois des solutions numériques performantes et innovantes. Toujours en veille sur les dernières tendances, je m’engage à transformer vos idées en projets concrets et à forte valeur ajoutée.",
+        "Développeur Full Stack passionné, spécialisé dans des technologies modernes telles que JavaScript, TypeScript, Node.js, React, Vue.js, PHP et Laravel. Fort d’une expertise technique et d’une approche polyvalente, je conçois des solutions numériques performantes et innovantes. Toujours en veille sur les dernières tendances, je m’engage à transformer vos idées en projets concrets et à forte valeur ajoutée.",
       citation: "Citation Favorite",
     },
     experience: [

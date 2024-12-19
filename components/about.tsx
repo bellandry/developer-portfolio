@@ -10,7 +10,7 @@ const About = () => {
   const t = translations[language].about;
 
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="py-20 px-4 min-h-screen flex items-center">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,13 +72,15 @@ const About = () => {
               <h2 className="text-3xl font-bold mb-12 text-center md:text-left">
                 {t.title}
               </h2>
-              <p className="text-md md:text-lg text-neutral-700 dark:text-neutral-200 leading-relaxed">
+              <p className="text-md md:text-lg leading-relaxed text-muted-foreground">
                 {t.description}
               </p>
-              <span>
-                {t.citation} :{" "}
-                <span className="italic">&quot;Dubito Ergo Sum.&quot;</span>
-              </span>
+              <p className="my-6 text-muted-foreground">
+                <span>
+                  {t.citation} :{" "}
+                  <span className="italic">&quot;Dubito Ergo Sum.&quot;</span>
+                </span>
+              </p>
             </motion.div>
           </motion.div>
         </motion.div>

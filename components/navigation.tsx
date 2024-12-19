@@ -11,6 +11,7 @@ import { Github, Gitlab, Linkedin, Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import * as React from "react";
+import { useRef } from "react";
 
 export function Navigation() {
   const { setTheme, theme } = useTheme();
@@ -19,8 +20,31 @@ export function Navigation() {
   const { t } = useLanguage();
   const navItems = t("navItems");
   const { isOpen, setIsOpen } = useOpenSheetStore();
+  const isActiveLinkRef = useRef<(href: string) => boolean>();
 
   React.useEffect(() => {
+    const isActiveLink = (href: string) => {
+      // Pour la page d'accueil
+      if (href === "/" || href === "") {
+        return pathname === "/" && !window.location.hash;
+      }
+
+      // Pour les liens avec ancres
+      if (href.startsWith("/#")) {
+        if (pathname === "/") {
+          const hash = window.location.hash;
+          // Comparer directement avec le hash actuel
+          return hash === href.replace("/#", "#");
+        }
+        return false;
+      }
+
+      // Pour les autres pages
+      return pathname === href;
+    };
+
+    isActiveLinkRef.current = isActiveLink; // Stocker la fonction dans la référence
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 0);
@@ -30,27 +54,7 @@ export function Navigation() {
     handleScroll(); // Check initial scroll position
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const isActiveLink = (href: string) => {
-    // Pour la page d'accueil
-    if (href === "/" || href === "") {
-      return pathname === "/" && !window.location.hash;
-    }
-
-    // Pour les liens avec ancres
-    if (href.startsWith("/#")) {
-      if (pathname === "/") {
-        const hash = window.location.hash;
-        // Comparer directement avec le hash actuel
-        return hash === href.replace("/#", "#");
-      }
-      return false;
-    }
-
-    // Pour les autres pages
-    return pathname === href;
-  };
+  }, [pathname]);
 
   return (
     <motion.header
@@ -80,9 +84,11 @@ export function Navigation() {
               href={item.href}
               className={cn(
                 "transition-colors",
-                isActiveLink(item.href)
-                  ? "text-foreground font-medium"
-                  : "text-neutral-600 dark:text-neutral-400 hover:text-foreground"
+                isActiveLinkRef.current
+                  ? isActiveLinkRef.current(item.href)
+                    ? "text-foreground font-medium"
+                    : "text-neutral-600 dark:text-neutral-400 hover:text-foreground"
+                  : ""
               )}
             >
               {item.name}
@@ -127,9 +133,11 @@ export function Navigation() {
                     onClick={setIsOpen}
                     className={cn(
                       "transition-colors",
-                      isActiveLink(item.href)
-                        ? "text-foreground font-medium"
-                        : "text-neutral-600 hover:text-foreground"
+                      isActiveLinkRef.current
+                        ? isActiveLinkRef.current(item.href)
+                          ? "text-foreground font-medium"
+                          : "text-neutral-600 hover:text-foreground"
+                        : ""
                     )}
                   >
                     {item.name}
