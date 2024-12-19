@@ -157,7 +157,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         >
           <div className="container mx-auto max-w-4xl">
             <header className="mb-8">
-              <h1 className="text-4xl font-bold mb-4" itemProp="headline">
+              <h1
+                className="text-3xl md:text-4xl font-bold mb-4"
+                itemProp="headline"
+              >
                 {post.title}
               </h1>
               <div className="flex items-center gap-4 mb-8">
