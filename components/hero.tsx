@@ -26,7 +26,7 @@ export function Hero() {
             {t.role}
           </h1>
           <p className="text-xl text-muted-foreground mb-8">{t.description}</p>
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-center items-center gap-2">
             <Button onClick={open} className="w-full md:w-auto my-2">
               {t.cta}
               <ArrowRight className="ml-2 h-4 w-4" />
