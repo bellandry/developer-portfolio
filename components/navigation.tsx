@@ -136,7 +136,7 @@ export function Navigation() {
                       isActiveLinkRef.current
                         ? isActiveLinkRef.current(item.href)
                           ? "text-foreground font-medium"
-                          : "text-neutral-600 hover:text-foreground"
+                          : "text-neutral-600 dark:text-neutral-400 hover:text-foreground"
                         : ""
                     )}
                   >
