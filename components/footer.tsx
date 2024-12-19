@@ -1,8 +1,7 @@
 "use client";
 
-import { navItems } from "@/constants";
-import { useLanguage } from '@/lib/useLanguage';
-import { translations } from '@/constants/translations';
+import { translations } from "@/constants/translations";
+import { useLanguage } from "@/lib/useLanguage";
 import Link from "next/link";
 import { FaGithub, FaGitlab, FaLinkedin } from "react-icons/fa";
 
@@ -35,6 +34,7 @@ export default function Footer() {
               href="https://github.com/bellandry"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="github"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <FaGithub className="w-5 h-5" />
@@ -43,6 +43,7 @@ export default function Footer() {
               href="https://gitlab.com/bellandry.work"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="gitlab"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <FaGitlab className="w-5 h-5" />
@@ -51,6 +52,7 @@ export default function Footer() {
               href="https://linkedin.com/in/bellandry"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="linkedin"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <FaLinkedin className="w-5 h-5" />
