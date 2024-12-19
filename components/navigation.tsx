@@ -108,7 +108,7 @@ export function Navigation() {
           </Button>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" aria-label="sidebar">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
