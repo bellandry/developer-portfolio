@@ -33,17 +33,23 @@ export function Navigation() {
   }, []);
 
   const isActiveLink = (href: string) => {
-    if (href === "/") {
-      return pathname === "/";
+    // Pour la page d'accueil
+    if (href === "/" || href === "") {
+      return pathname === "/" && !window.location.hash;
     }
+
+    // Pour les liens avec ancres
     if (href.startsWith("/#")) {
-      // Check if we're on the home page and the hash matches
-      if (pathname === "/" && typeof window !== "undefined") {
+      if (pathname === "/") {
         const hash = window.location.hash;
-        return hash === href;
+        // Comparer directement avec le hash actuel
+        return hash === href.replace("/#", "#");
       }
       return false;
     }
+
+    // Pour les autres pages
+    return pathname === href;
   };
 
   return (
@@ -76,7 +82,7 @@ export function Navigation() {
                 "transition-colors",
                 isActiveLink(item.href)
                   ? "text-foreground font-medium"
-                  : "text-neutral-600 hover:text-foreground"
+                  : "text-neutral-600 dark:text-neutral-400 hover:text-foreground"
               )}
             >
               {item.name}

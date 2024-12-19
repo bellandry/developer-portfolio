@@ -30,6 +30,12 @@ export const translations = {
       { name: "Skills", href: "/#skills" },
       { name: "Blog", href: "/blog" },
     ],
+    about: {
+      title: "About me",
+      description:
+        "Passionate Full Stack Developer specializing in modern technologies such as JavaScript, TypeScript, Node.js, React, Vue.js, PHP, and Laravel. With strong technical expertise and a versatile approach, I design innovative and high-performance digital solutions. Continuously staying ahead of industry trends, I am committed to turning your ideas into impactful and value-driven projects.",
+      citation: "Best Citation",
+    },
     experience: [
       {
         title: "Senior Web Developer",
@@ -88,6 +94,12 @@ export const translations = {
       { name: "Compétences", href: "/#skills" },
       { name: "Blog", href: "/blog" },
     ],
+    about: {
+      title: "A propos de moi",
+      description:
+        "Développeur Full Stack passionné, spécialisé dans des technologies modernes telles que JavaScript, TypeScript, Node.js, React, Vue.js, PHP et Laravel.Fort d’une expertise technique et d’une approche polyvalente, je conçois des solutions numériques performantes et innovantes. Toujours en veille sur les dernières tendances, je m’engage à transformer vos idées en projets concrets et à forte valeur ajoutée.",
+      citation: "Citation Favorite",
+    },
     experience: [
       {
         title: "Développeur Web Senior",

@@ -1,3 +1,4 @@
+import About from "@/components/about";
 import { Experience } from "@/components/experience";
 import { FloatingContact } from "@/components/floating-contact";
 import Footer from "@/components/footer";
@@ -30,6 +31,7 @@ export default async function Home() {
   return (
     <>
       <Hero />
+      <About />
       <Experience />
       <Projects initialProjects={projects} />
       <Skills />
