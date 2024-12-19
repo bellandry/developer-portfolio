@@ -24,7 +24,7 @@ export const translations = {
       cta: "Get in Touch",
     },
     navItems: [
-      { name: "Home", href: "/" },
+      { name: "Home", href: "/#" },
       { name: "Experience", href: "/#experience" },
       { name: "Projects", href: "/#projects" },
       { name: "Skills", href: "/#skills" },
@@ -82,7 +82,7 @@ export const translations = {
       cta: "On se parle ?",
     },
     navItems: [
-      { name: "Accueil", href: "/" },
+      { name: "Accueil", href: "/#" },
       { name: "Expérience", href: "/#experience" },
       { name: "Projets", href: "/#projects" },
       { name: "Compétences", href: "/#skills" },

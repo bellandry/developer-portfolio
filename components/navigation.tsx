@@ -9,7 +9,6 @@ import useOpenSheetStore from "@/store/use-open-sheet-store";
 import { motion } from "framer-motion";
 import { Github, Gitlab, Linkedin, Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as React from "react";
 
@@ -45,7 +44,6 @@ export function Navigation() {
       }
       return false;
     }
-    return pathname.startsWith(href);
   };
 
   return (
@@ -58,20 +56,20 @@ export function Navigation() {
       transition={{ duration: 0.3 }}
     >
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link
-          href="/"
+        <a
+          href="/#"
           className="font-bold bg-neutral-950 dark:bg-white text-neutral-100 dark:text-neutral-900 rounded-md p-1 flex gap-1 items-center pl-2"
         >
           Laclass
           <span className="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 rounded-sm p-1">
             .dev
           </span>
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
           {(navItems as { name: string; href: string }[]).map((item) => (
-            <Link
+            <a
               key={item.name}
               href={item.href}
               className={cn(
@@ -82,12 +80,13 @@ export function Navigation() {
               )}
             >
               {item.name}
-            </Link>
+            </a>
           ))}
           <LanguageSwitcher />
           <Button
             variant="ghost"
             size="icon"
+            aria-label="switch theme button"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
             <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -101,6 +100,7 @@ export function Navigation() {
           <Button
             variant="ghost"
             size="icon"
+            aria-label="switch theme button"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
             <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -115,7 +115,7 @@ export function Navigation() {
             <SheetContent className="bg-background/60 backdrop-blur-sm flex flex-col justify-between">
               <div className="flex flex-col gap-4 mt-8">
                 {(navItems as { name: string; href: string }[]).map((item) => (
-                  <Link
+                  <a
                     key={item.name}
                     href={item.href}
                     onClick={setIsOpen}
@@ -127,7 +127,7 @@ export function Navigation() {
                     )}
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 ))}
               </div>
               <div className="flex flex-wrap justify-center gap-4">
@@ -136,6 +136,7 @@ export function Navigation() {
                     href="https://github.com/bellandry"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="github"
                   >
                     <Github className="h-4 w-4" />
                   </a>
@@ -145,6 +146,7 @@ export function Navigation() {
                     href="https://gitlab.com/bellandry.work"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="gitlab"
                   >
                     <Gitlab className="h-4 w-4" />
                   </a>
@@ -154,6 +156,7 @@ export function Navigation() {
                     href="https://linkedin.com/in/bellandry"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="linkedin"
                   >
                     <Linkedin className="h-4 w-4" />
                   </a>
